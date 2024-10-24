@@ -13,10 +13,15 @@ const Body = () => {
   const Promoted=PromotedLabel(RestaurantCard)
   const handleSearch = (value) => {
     setSearchData(value);
+
     const filteredData = resData.filter((val) =>
       val.name.toLowerCase().includes(searchData.toLowerCase())
     );
     setFilterData(filteredData);
+    if(value=='')
+    {
+      setFilterData(resData)
+    }
   };
 
   const handleAll = () => {
